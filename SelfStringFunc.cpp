@@ -57,7 +57,8 @@ int Selfstrlen(const char* str)
 {
     assert(str != NULL);
     int i = -1;
-    while(str[++i] != '\0'){}
+    while(str[++i] != '\0')
+        ;
     return i;
 }
 
@@ -66,11 +67,16 @@ int Selfputs(const char* str)
     assert(str != NULL);
     int  i = 0;
     char tempc = 0;
+
     while((tempc = str[i++]) != '\0')
+    {
         putchar(tempc);
+    }
 
     if(tempc == '\0')
+    {
         return i;
+    }
     return EOF;
 }
 
@@ -94,12 +100,15 @@ char* Selfstrcat (char* dest , const char* src)
     assert(dest != NULL);
     assert(src  != NULL);
     int i = 0;
-    while(dest[i++] != '\0'){}
+    while(dest[i++] != '\0')
+        ;
     int j = 0;
     i--;
 
     while(src[j] != '\0') 
+    {
         dest[i++] = src[j++];
+    }
     return dest;
 }
 
@@ -112,9 +121,13 @@ int Selfstrcmp(const char* lhs, const char* rhs)
     while(((l = lhs[i]) != '\0') && ((r = rhs[i]) != '\0'))
     {
         if(l < r)
+        {
             return -1;
+        }
         else if(l > r)
+        {
             return 1;
+        }
         i++;
     }
     r = rhs[i];
@@ -130,9 +143,13 @@ int SelfstrNcmp(const char* lhs, const char* rhs, int N)
     while(((l = lhs[i]) != '\0') && ((r = rhs[i]) != '\0') && i < N - 1)
     {
         if(l < r)
+        {
             return -1;
+        }
         else if(l > r)
+        {
             return 1;
+        }
         i++;
     }
     r = rhs[i];
@@ -149,8 +166,9 @@ char* Selfstrstr (const char* str, const char* substr)
     while(!isSubStr && i < Selfstrlen(str))
     {
         if(str[i] == substr[0]) 
+        {
             isSubStr = IsSubStr(str, substr, i);
-
+        }
         if(isSubStr)
         {
             firstc = (char*) str + i;
@@ -171,7 +189,9 @@ bool IsSubStr(const char* str, const char* substr, int i)
     while(j < lenSubstr && i < lenStr)
     {
         if(str[i] != substr[j]) 
+        {
             return 0;
+        }
         i++;
         j++;
     }
