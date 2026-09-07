@@ -7,7 +7,9 @@ int   Selfstrlen (const char* str);
 int   Selfputs   (const char* str);
 int   Selfstrcmp (const char* lhs, const char* rhs);
 int   SelfstrNcmp(const char* lhs, const char* rhs, int N);
-bool   IsSubStr   (const char* str, const char* substr, int i);
+
+bool  IsSubStr   (const char* str, const char* substr, int i);
+
 char* Selfstrstr (const char* str, const char* substr); 
 char* Selfstrdup (const char* str1);
 char* Selfstrcpy (char* dest, const char* src);
